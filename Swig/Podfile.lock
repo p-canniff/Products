@@ -1,0 +1,13 @@
+PODS:
+  - GoogleMaps (1.13.0)
+  - Mapbox-iOS-SDK (3.2.0)
+
+DEPENDENCIES:
+  - GoogleMaps
+  - Mapbox-iOS-SDK (~> 3.2.0)
+
+SPEC CHECKSUMS:
+  GoogleMaps: 7a6caeb8336d7cb42982e969fc9b1b20a889fe79
+  Mapbox-iOS-SDK: 3b9e8d0f77098494cc236384fde2a26eb6683f3d
+
+COCOAPODS: 0.39.0

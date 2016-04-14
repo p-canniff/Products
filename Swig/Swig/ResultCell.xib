@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="resultReuse" id="KGk-i7-Jjw" customClass="ResultCell" customModule="Swig" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="160"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="159.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="test_place_image" translatesAutoresizingMaskIntoConstraints="NO" id="DKO-QY-eLg">
+                        <rect key="frame" x="-24" y="10" width="110" height="110"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="110" id="Qim-kE-RTL"/>
+                            <constraint firstAttribute="width" secondItem="DKO-QY-eLg" secondAttribute="height" multiplier="1:1" id="oGd-MW-ycw"/>
+                        </constraints>
+                    </imageView>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ke4-wo-yoO">
+                        <rect key="frame" x="106" y="121" width="109.5" height="30"/>
+                        <state key="normal" title="INVITE">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cJt-yS-kWY">
+                        <rect key="frame" x="-24" y="121" width="110" height="30"/>
+                        <state key="normal" title="CALL">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D91-Rq-gOo">
+                        <rect key="frame" x="235" y="121" width="109.5" height="30"/>
+                        <state key="normal" title="UBER">
+                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        </state>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MiF-8E-cVY">
+                        <rect key="frame" x="106" y="10" width="206" height="33"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="33" id="3Nz-x4-DI3"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="DKO-QY-eLg" firstAttribute="centerX" secondItem="cJt-yS-kWY" secondAttribute="centerX" id="DCv-Y5-TA8"/>
+                    <constraint firstItem="cJt-yS-kWY" firstAttribute="width" secondItem="ke4-wo-yoO" secondAttribute="width" id="DFt-Mq-twg"/>
+                    <constraint firstItem="ke4-wo-yoO" firstAttribute="width" secondItem="DKO-QY-eLg" secondAttribute="width" id="LKe-Vt-Hyn"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="ke4-wo-yoO" secondAttribute="bottom" id="NUR-OK-GTs"/>
+                    <constraint firstItem="DKO-QY-eLg" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="Nae-vR-MuP"/>
+                    <constraint firstItem="D91-Rq-gOo" firstAttribute="leading" secondItem="ke4-wo-yoO" secondAttribute="trailing" constant="20" id="O8H-kQ-AVc"/>
+                    <constraint firstItem="ke4-wo-yoO" firstAttribute="leading" secondItem="cJt-yS-kWY" secondAttribute="trailing" constant="20" id="U1k-YS-bFk"/>
+                    <constraint firstItem="DKO-QY-eLg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="XIV-bz-3ey"/>
+                    <constraint firstItem="MiF-8E-cVY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="gQ4-lj-wFW"/>
+                    <constraint firstItem="cJt-yS-kWY" firstAttribute="centerY" secondItem="ke4-wo-yoO" secondAttribute="centerY" id="jVz-LO-9mx"/>
+                    <constraint firstItem="D91-Rq-gOo" firstAttribute="width" secondItem="ke4-wo-yoO" secondAttribute="width" id="lX5-jY-WR3"/>
+                    <constraint firstItem="MiF-8E-cVY" firstAttribute="leading" secondItem="DKO-QY-eLg" secondAttribute="trailing" constant="20" id="sbQ-0i-AtS"/>
+                    <constraint firstItem="D91-Rq-gOo" firstAttribute="centerY" secondItem="ke4-wo-yoO" secondAttribute="centerY" id="wZV-Hm-qBj"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="MiF-8E-cVY" secondAttribute="trailing" id="yOM-eb-5GG"/>
+                    <constraint firstItem="ke4-wo-yoO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ygO-Tr-4za"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="Nae-vR-MuP"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <connections>
+                <outlet property="callButton" destination="cJt-yS-kWY" id="STg-g2-gZO"/>
+                <outlet property="inviteButton" destination="ke4-wo-yoO" id="xJf-az-0Yt"/>
+                <outlet property="placeImage" destination="DKO-QY-eLg" id="OlM-Xk-Xhp"/>
+                <outlet property="resultTitle" destination="MiF-8E-cVY" id="J7C-IF-293"/>
+                <outlet property="uberButton" destination="D91-Rq-gOo" id="w2L-nH-v2x"/>
+            </connections>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="test_place_image" width="400" height="400"/>
+    </resources>
+</document>

@@ -30,17 +30,17 @@
                                     <constraint firstAttribute="height" constant="85" id="rvU-1n-hZ5"/>
                                 </constraints>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="TZ0-TV-mp4">
-                                    <size key="itemSize" width="80" height="85"/>
+                                    <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="16" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="typeReuse" id="kbB-OB-pZR">
-                                        <rect key="frame" x="16" y="0.0" width="80" height="85"/>
+                                        <rect key="frame" x="16" y="2.5" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="80" height="85"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -177,7 +177,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" barStyle="black" translucent="NO" prompted="NO"/>
                     <connections>
+                        <outlet property="backgroundImage" destination="TOz-P1-TgL" id="iU8-pb-5C0"/>
                         <outlet property="rangeView" destination="75P-eL-VDQ" id="FzC-BD-cEj"/>
+                        <outlet property="searchButtonOutlet" destination="b7U-ZJ-hWA" id="0NU-KN-DBG"/>
                         <outlet property="typeView" destination="Nkr-47-1UY" id="ajb-E1-5nh"/>
                         <segue destination="3PK-fA-4vh" kind="show" identifier="resultSegue" id="Gr3-oX-VN5"/>
                     </connections>

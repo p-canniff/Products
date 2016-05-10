@@ -18,9 +18,17 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     
     var requestRange = "1500"
 
+    @IBOutlet weak var backgroundImage: UIImageView!
+    
     @IBOutlet weak var typeView: UICollectionView!
     
     @IBOutlet weak var rangeView: UICollectionView!
+    
+    @IBOutlet weak var searchButtonOutlet: UIButton!
+    
+    override func viewDidAppear(animated: Bool) {
+        searchButtonOutlet.enabled = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,7 +44,7 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         
         //Nib Registers
         typeView.registerNib(UINib(nibName: "pickerCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "typeReuse")
-        rangeView.registerNib(UINib(nibName: "pickerCellCollectionViewCell", bundle: nil), forCellWithReuseIdentifier: "typeReuse")
+        rangeView.registerNib(UINib(nibName: "rangeCell", bundle: nil), forCellWithReuseIdentifier: "rangeReuse")
         
         //Navigation Bar Setup
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)]
@@ -70,6 +78,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     /*Action will request Places from Google Places Web API Services */
     @IBAction func searchAction(sender: UIButton) {
         
+        searchButtonOutlet.enabled = false
+        
         PlaceManager.sharedInstance.requestPlaces("\(locManager.location!.coordinate.longitude)", lat: "\(locManager.location!.coordinate.latitude)", typeFiler: requestFiler, range: requestRange)
     
     }
@@ -81,6 +91,8 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     
     func segueToResult(){
+        
+        
         
         print(PlaceManager.sharedInstance.places.count)
     
@@ -101,16 +113,19 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         if collectionView.tag == 0 {
             return PlaceManager.sharedInstance.placeTypes.count
         } else {
-            return 4
+            return 5
         }
         
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("typeReuse", forIndexPath: indexPath) as! pickerCellCollectionViewCell
+    
+        let cell = UICollectionViewCell()
         
         if collectionView.tag == 0 {
         /*Type Collection Setup*/
+            
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("typeReuse", forIndexPath: indexPath) as! pickerCellCollectionViewCell
             
             cell.pickerImage.image = PlaceManager.sharedInstance.placeTypes[indexPath.row].icon
             cell.pickerTitle.text = PlaceManager.sharedInstance.placeTypes[indexPath.row].name
@@ -121,7 +136,9 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
         } else if collectionView.tag == 1 {
         /*Range Collection Setup*/
         
-            cell.pickerImage.image = PlaceManager.sharedInstance.placeTypes[indexPath.row].icon
+            let cell = collectionView.dequeueReusableCellWithReuseIdentifier("rangeReuse", forIndexPath: indexPath) as! rangeCell
+            
+            cell.rangeID.text = PlaceManager.sharedInstance.rangeIDs[indexPath.row]
             
             return cell
         }
@@ -130,10 +147,20 @@ class ViewController: UIViewController, UICollectionViewDataSource, UICollection
     }
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
+        // Change Filter Setup
         
-        
-    }
+        if collectionView.tag == 0 {
+            
+            requestFiler = PlaceManager.sharedInstance.placeTypes[indexPath.row].filter
+            backgroundImage.image = PlaceManager.sharedInstance.placeTypes[indexPath.row].image
+            
+        } else if collectionView.tag == 1 {
+            
+            requestRange = PlaceManager.sharedInstance.placeRanges[indexPath.row]
+            
+        }
     
+    }
     
     //MARK: LOCATION DELEGATE METHOD
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {

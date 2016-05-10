@@ -50,6 +50,12 @@
                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R2T-X9-9tQ">
+                        <rect key="frame" x="106" y="42" width="206" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="DKO-QY-eLg" firstAttribute="centerX" secondItem="cJt-yS-kWY" secondAttribute="centerX" id="DCv-Y5-TA8"/>
@@ -60,10 +66,13 @@
                     <constraint firstItem="D91-Rq-gOo" firstAttribute="leading" secondItem="ke4-wo-yoO" secondAttribute="trailing" constant="20" id="O8H-kQ-AVc"/>
                     <constraint firstItem="ke4-wo-yoO" firstAttribute="leading" secondItem="cJt-yS-kWY" secondAttribute="trailing" constant="20" id="U1k-YS-bFk"/>
                     <constraint firstItem="DKO-QY-eLg" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="XIV-bz-3ey"/>
+                    <constraint firstItem="R2T-X9-9tQ" firstAttribute="top" secondItem="MiF-8E-cVY" secondAttribute="bottom" constant="-1" id="abt-iM-gke"/>
                     <constraint firstItem="MiF-8E-cVY" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="2" id="gQ4-lj-wFW"/>
                     <constraint firstItem="cJt-yS-kWY" firstAttribute="centerY" secondItem="ke4-wo-yoO" secondAttribute="centerY" id="jVz-LO-9mx"/>
                     <constraint firstItem="D91-Rq-gOo" firstAttribute="width" secondItem="ke4-wo-yoO" secondAttribute="width" id="lX5-jY-WR3"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="R2T-X9-9tQ" secondAttribute="trailing" id="qZS-7H-8VJ"/>
                     <constraint firstItem="MiF-8E-cVY" firstAttribute="leading" secondItem="DKO-QY-eLg" secondAttribute="trailing" constant="20" id="sbQ-0i-AtS"/>
+                    <constraint firstItem="R2T-X9-9tQ" firstAttribute="leading" secondItem="DKO-QY-eLg" secondAttribute="trailing" constant="20" id="vI6-FL-QHU"/>
                     <constraint firstItem="D91-Rq-gOo" firstAttribute="centerY" secondItem="ke4-wo-yoO" secondAttribute="centerY" id="wZV-Hm-qBj"/>
                     <constraint firstAttribute="trailingMargin" secondItem="MiF-8E-cVY" secondAttribute="trailing" id="yOM-eb-5GG"/>
                     <constraint firstItem="ke4-wo-yoO" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="ygO-Tr-4za"/>
@@ -74,8 +83,9 @@
                     </mask>
                 </variation>
             </tableViewCellContentView>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.0" colorSpace="calibratedRGB"/>
             <connections>
+                <outlet property="addressLabel" destination="R2T-X9-9tQ" id="8FO-fF-IQS"/>
                 <outlet property="callButton" destination="cJt-yS-kWY" id="STg-g2-gZO"/>
                 <outlet property="inviteButton" destination="ke4-wo-yoO" id="xJf-az-0Yt"/>
                 <outlet property="placeImage" destination="DKO-QY-eLg" id="OlM-Xk-Xhp"/>

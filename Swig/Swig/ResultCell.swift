@@ -20,6 +20,8 @@ class ResultCell: UITableViewCell {
     
     @IBOutlet weak var resultTitle: UILabel!
     
+    @IBOutlet weak var addressLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         

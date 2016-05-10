@@ -37,11 +37,6 @@ class MapViewController: UIViewController, MGLMapViewDelegate {
         mapView.showsUserLocation = true
         mapView.delegate = self
         
-//        placeImage.clipsToBounds = true
-//        placeImage.layer.cornerRadius = (placeImage.layer.frame.height/2)
-//        placeImage.layer.borderColor = UIColor.whiteColor().CGColor
-//        placeImage.layer.borderWidth = 2.0;
-        
         callButton.layer.cornerRadius = (callButton.layer.frame.height/2)
         callButton.layer.borderColor = UIColor.whiteColor().CGColor
         callButton.layer.borderWidth = 2.0;

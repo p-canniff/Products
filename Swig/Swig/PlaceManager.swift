@@ -23,18 +23,20 @@ class PlaceManager : NSObject {
     var ids : [String] = []
     var places : [Place] = []
     var placeTypes : [PlaceType] = []
+    let placeRanges : [String] = ["8000", "16000", "25000", "32000", "40000"]
+    let rangeIDs : [String] = ["5m","10m","15m","20m", "25m"]
     
     func buildPlaceTypes(){
     
         let food = PlaceType(name: "Food", filter: "restaurant", image: UIImage(named:"place_food_image")!, icon: UIImage(named: "rest_icon")!)
-        let drinks = PlaceType(name: "Drinks", filter: "bar", image: UIImage(named:"place_drinks_image")!, icon: UIImage(named: "rest_icon")!)
-        let cafe = PlaceType(name: "Cafe", filter: "cafe", image: UIImage(named:"place_cafe_image")!, icon: UIImage(named: "rest_icon")!)
-        let movies = PlaceType(name: "Movies", filter: "restaurant", image: UIImage(named:"place_food_image")!, icon: UIImage(named: "rest_icon")!)
-        let health = PlaceType(name: "Health", filter: "bar", image: UIImage(named:"place_drinks_image")!, icon: UIImage(named: "rest_icon")!)
-        let shops = PlaceType(name: "Shops", filter: "cafe", image: UIImage(named:"place_cafe_image")!, icon: UIImage(named: "rest_icon")!)
+        let drinks = PlaceType(name: "Drinks", filter: "bar", image: UIImage(named:"place_drinks_image")!, icon: UIImage(named: "bar_icon")!)
+        let cafe = PlaceType(name: "Cafe", filter: "cafe", image: UIImage(named:"place_cafe_image")!, icon: UIImage(named: "cafe_icon")!)
+        let movies = PlaceType(name: "Movies", filter: "restaurant", image: UIImage(named:"place_film_image")!, icon: UIImage(named: "film_icon")!)
+        let health = PlaceType(name: "Health", filter: "bar", image: UIImage(named:"place_health_image")!, icon: UIImage(named: "heal_icon")!)
+        let shops = PlaceType(name: "Shops", filter: "cafe", image: UIImage(named:"place_shop_image")!, icon: UIImage(named: "shop_icon")!)
         
-        placeTypes.append(food)
         placeTypes.append(drinks)
+        placeTypes.append(food)
         placeTypes.append(cafe)
         placeTypes.append(movies)
         placeTypes.append(health)
@@ -82,7 +84,7 @@ class PlaceManager : NSObject {
                 let json = data;
                 self.myData = NSMutableData(data: json!);
                 
-                let queue = dispatch_queue_create("com.ponderMobile.Google.Places-Test", DISPATCH_QUEUE_CONCURRENT)
+                let queue = dispatch_queue_create("com.ponderMobile.Swig.Places", DISPATCH_QUEUE_CONCURRENT)
                 dispatch_sync(queue, {
                     
                     if self.myData.length != 0 {

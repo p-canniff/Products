@@ -46,6 +46,7 @@ class ResultViewController: UIViewController, UITableViewDataSource, UITableView
         let cell = tableView.dequeueReusableCellWithIdentifier("resultReuse") as! ResultCell
         
         cell.resultTitle.text = PlaceManager.sharedInstance.places[indexPath.row].name
+        cell.addressLabel.text = PlaceManager.sharedInstance.places[indexPath.row].address
         
         //print(PlaceManager.sharedInstance.places.count)
         
